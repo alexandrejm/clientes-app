@@ -10,6 +10,7 @@ import { TemplateModule } from './template/template.module';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component'
+import { ClientesModule } from './clientes/clientes.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LayoutComponent } from './layout/layout.component'
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    TemplateModule
+    TemplateModule,
+    ClientesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
