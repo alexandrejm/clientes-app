@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http'
 
 import { Cliente } from './clientes/cliente';
 import { Observable } from 'rxjs';
-import { calcPossibleSecurityContexts } from '@angular/compiler/src/template_parser/binding_parser';
 
 @Injectable({
   providedIn: 'root'
