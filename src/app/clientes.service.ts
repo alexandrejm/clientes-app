@@ -9,22 +9,26 @@ import { Observable } from 'rxjs';
 })
 export class ClientesService {
 
-  constructor( private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  salvar( cliente: Cliente ) : Observable<Cliente> {  //Em vez de <Cliente> pode-se usar <any>
-    return this.http.post<Cliente>('http://localhost:8080/api/clientes' , cliente)
+  salvar(cliente: Cliente): Observable<Cliente> {  //Em vez de <Cliente> pode-se usar <any>
+    return this.http.post<Cliente>('http://localhost:8080/api/clientes', cliente)
   }
 
-  atualizar( cliente: Cliente ) : Observable<any> {  //Usou <any> pq na resposta o backend nao retorna nada
-    return this.http.put<Cliente>(`http://localhost:8080/api/clientes/${cliente.id}` , cliente)
+  atualizar(cliente: Cliente): Observable<any> {  //Usou <any> pq na resposta o backend nao retorna nada
+    return this.http.put<Cliente>(`http://localhost:8080/api/clientes/${cliente.id}`, cliente)
   }
 
-  getClientes() :  Observable<Cliente[]> {
+  getClientes(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>('http://localhost:8080/api/clientes');
   }
 
-  getClienteById(id: number) : Observable<Cliente> {
+  getClienteById(id: number): Observable<Cliente> {
     return this.http.get<any>(`http://localhost:8080/api/clientes/${id}`);
+  }
+
+  deletar(cliente: Cliente): Observable<any> {  //Usou <any> pq na resposta o backend nao retorna nada
+    return this.http.delete<any>(`http://localhost:8080/api/clientes/${cliente.id}`);
   }
 
   /* Clientes Manual
