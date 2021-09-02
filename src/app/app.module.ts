@@ -12,7 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component'
 import { ClientesModule } from './clientes/clientes.module';
-import { ClientesService } from './clientes.service'
+import { ClientesService } from './clientes.service';
+import { ServicoPrestadoModule } from './servico-prestado/servico-prestado.module';
+import { ServicoPrestadoService } from './servico-prestado.service'
 
 @NgModule({
   declarations: [
@@ -27,10 +29,12 @@ import { ClientesService } from './clientes.service'
     FormsModule,
     AppRoutingModule,
     TemplateModule,
-    ClientesModule
+    ClientesModule,
+    ServicoPrestadoModule
   ],
   providers: [
-    ClientesService
+    ClientesService,
+    ServicoPrestadoService
   ],
   bootstrap: [AppComponent]
 })

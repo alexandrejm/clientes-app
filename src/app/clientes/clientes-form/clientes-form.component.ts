@@ -66,6 +66,7 @@ export class ClientesFormComponent implements OnInit {
         }, errorResponse => {
           this.success = false;
           this.errors = errorResponse.error.errors;
+          //const mensagens = response.error.errors.map( e => e.defaultMessage);
           //console.log(this.errors);
           //console.log(errorResponse.error.errors[0].defaultMessage);
           //console.log(errorString.split(',' , 3) );
