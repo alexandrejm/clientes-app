@@ -12,7 +12,9 @@ import { ServicoPrestadoService } from '../../servico-prestado.service'
 export class ServicoPrestadoFormComponent implements OnInit {
 
   clientes: Cliente[] = []
-  servico: ServicoPrestado
+  servico: ServicoPrestado;
+  success: boolean = false;
+  errors: String[];
 
   constructor(
     private clienteService: ClientesService,
@@ -30,8 +32,14 @@ export class ServicoPrestadoFormComponent implements OnInit {
   onSubmit(){
     this.service
     .salvar(this.servico)
-    .subscribe( response => {
-      console.log(response);
+    .subscribe(response => {
+      this.success = true;
+      this.errors = null;
+      this.servico = new ServicoPrestado(); // Para limpar formulário para próximo cadastro
+      //this.servico.descricao = ""; // Para limpar apenas descrição e deixar o resto.
+    }, errorResponse => {
+      this.success = false;
+      this.errors = errorResponse.error.errors;
     })
   }
 
