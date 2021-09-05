@@ -23,6 +23,17 @@
                 Serviços Prestados
                 </a>
 
+                <div class="sb-sidenav-menu-heading">Logout</div>
+
+                <a class="nav-link collapsed" (click)="logout();" href="#"
+                    data-toggle="collapse" data-target="#collapseLayouts" 
+                    aria-expanded="false" aria-controls="collapseLayouts"
+                    ><div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i></div>
+                    Sair
+                </a>
+
+                <div class="sb-sidenav-menu-heading">Extras</div>
+
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages"
                     ><div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                     Pages
@@ -57,8 +68,8 @@
             </div>
         </div>
         <div class="sb-sidenav-footer">
-            <div class="small">Logado como:</div>
-            Administrador
+            <div class="small">Usuário Logado:</div>
+            {{ usuarioLogado }}
         </div>
     </nav>
 </div>
