@@ -25,7 +25,7 @@
                                         <div class="form-group">
                                             <label class="small mb-1">Login</label>
                                             <input type="text" name="username"
-                                                    [(ngModel)]="username" autocomplete="off"
+                                                    [(ngModel)]="username" autocomplete="off" required
                                                     class="form-control py-4"
                                                     placeholder="Digite Seu Login" />
                                         </div>
@@ -33,19 +33,22 @@
                                         <div class="form-group">
                                             <label class="small mb-1">Senha</label>
                                             <input type="password" name="password"
-                                                    [(ngModel)]="password"
+                                                    [(ngModel)]="password" required
                                                     class="form-control py-4"
                                                     placeholder="Digite Sua Senha" />
                                         </div>
 
                                         <div class="form-group d-Flex align-items-center justify-content-between mt-4 mb-0">
-                                            <button type="submit" class="btn btn-primary" *ngIf="!cadastrando">
+                                            <button type="submit" class="btn btn-primary" 
+                                                    *ngIf="!cadastrando"
+                                                    [disabled]="!loginForm.valid">
                                                 Enviar 
                                             </button>
 
                                             <button type="button" class="btn btn-success" 
                                                     (click)="cadastrar()"
-                                                    *ngIf="cadastrando">
+                                                    *ngIf="cadastrando"
+                                                    [disabled]="!loginForm.valid">
                                                 Cadastrar 
                                             </button>
 

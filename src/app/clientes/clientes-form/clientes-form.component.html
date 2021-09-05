@@ -42,14 +42,14 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Nome: *</label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome"/>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome" required/>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
                     <label>CPF: *</label>
-                    <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf" />
+                    <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf" required/>
                 </div>
             </div>
 
@@ -58,11 +58,11 @@
         <div class="row">
 
             <div class="col-md-3">
-                <button type="submit" class="btn btn-success" *ngIf="!cliente.id">
+                <button type="submit" class="btn btn-success" *ngIf="!cliente.id" [disabled]="!clienteForm.valid">
                     <i class="fa fa-save"></i> Salvar
                 </button>
 
-                <button type="submit" class="btn btn-primary" *ngIf="cliente.id">
+                <button type="submit" class="btn btn-primary" *ngIf="cliente.id" [disabled]="!clienteForm.valid">
                     <i class="fa fa-sync-alt"></i> Atualizar
                 </button>
 
